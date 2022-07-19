@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-import classes from "./AddMovie.module.css";
+import classes from "./AddText.module.css";
 
 function AddMovie(props) {
   const titleRef = useRef("");

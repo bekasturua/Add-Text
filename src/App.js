@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 
-import MoviesList from "./components/MoviesList";
-import AddMovie from "./components/AddMovie";
+import MoviesList from "./components/TextsList";
+import AddMovie from "./components/AddText";
 import "./App.css";
 import { keyboard } from "@testing-library/user-event/dist/keyboard";
 
@@ -60,7 +60,7 @@ function App() {
     console.log(data);
   }
 
-  let content = <p>Found no movies.</p>;
+  let content = <p>Nothing found.</p>;
 
   if (movies.length > 0) {
     content = <MoviesList movies={movies} />;
