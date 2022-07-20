@@ -31,7 +31,7 @@ function AddText(props) {
   return (
     <form onSubmit={submitHandler}>
       <div className={classes.control}>
-        <label htmlFor="title">Title</label>
+        <label htmlFor="title">Name</label>
         <input
           type="text"
           onChange={nameInputChangeHandler}
@@ -41,10 +41,10 @@ function AddText(props) {
         />
       </div>
       <div className={classes.control}>
-        <label htmlFor="opening-text">Opening Text</label>
+        <label htmlFor="opening-text">Message</label>
         <textarea rows="5" id="opening-text" ref={openingTextRef}></textarea>
       </div>
-      <button>Add</button>
+      <button>Send</button>
     </form>
   );
 }
