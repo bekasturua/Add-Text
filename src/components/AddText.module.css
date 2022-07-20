@@ -28,3 +28,10 @@
 .errorText {
   color: red;
 }
+
+
+.messageSent {
+  font-weight: bold;
+  color: blue;
+  font-size: 24px;
+}
