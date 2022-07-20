@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 
 import MoviesList from "./components/TextsList";
-import AddMovie from "./components/AddText";
+import AddText from "./components/AddText";
 import "./App.css";
-import { keyboard } from "@testing-library/user-event/dist/keyboard";
-import AddMessage from "./components/AddMessage";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -78,7 +76,7 @@ function App() {
   return (
     <React.Fragment>
       <section>
-        <AddMovie onAddMovie={addMovieHandler} />
+        <AddText onAddMovie={addMovieHandler} />
       </section>
       <section>
         <button onClick={fetchMoviesHandler}>Fetch</button>
