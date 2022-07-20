@@ -57,7 +57,7 @@ function AddText(props) {
         )}
       </div>
       <button>Send</button>
-      {messageSent && <p className={classes.messageSent}>Message Sent</p>}
+      {messageSent && <p className={classes.messageSent}>Message Sent.</p>}
     </form>
   );
 }
