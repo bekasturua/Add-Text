@@ -5,6 +5,7 @@ import classes from "./AddText.module.css";
 function AddText(props) {
   const [enteredName, setEnteredName] = useState("");
   const [enteredNameIsValid, setEnteredNameIsValid] = useState(true);
+  const [messageSent, setMessageSent] = useState();
   const titleRef = useRef("");
   const openingTextRef = useRef("");
   const releaseDateRef = useRef("");
@@ -21,6 +22,9 @@ function AddText(props) {
       return;
     }
 
+    if (enteredName) {
+      setMessageSent(true);
+    }
     const text = {
       title: titleRef.current.value,
       openingText: openingTextRef.current.value,
@@ -53,6 +57,7 @@ function AddText(props) {
         )}
       </div>
       <button>Send</button>
+      {messageSent && <p>Message Sent</p>}
     </form>
   );
 }
