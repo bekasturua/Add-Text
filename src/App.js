@@ -4,6 +4,7 @@ import MoviesList from "./components/TextsList";
 import AddMovie from "./components/AddText";
 import "./App.css";
 import { keyboard } from "@testing-library/user-event/dist/keyboard";
+import AddMessage from "./components/AddMessage";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -15,7 +16,7 @@ function App() {
     setError(null);
     try {
       const response = await fetch(
-        "https://react-http-e8a4a-default-rtdb.firebaseio.com/movies.json"
+        "https://texts-88adb-default-rtdb.firebaseio.com/texts.json"
       );
       if (!response.ok) {
         throw new Error("Something went wrong!");
@@ -45,12 +46,12 @@ function App() {
     fetchMoviesHandler();
   }, [fetchMoviesHandler]);
 
-  async function addMovieHandler(movie) {
+  async function addMovieHandler(text) {
     const response = await fetch(
-      "https://react-http-e8a4a-default-rtdb.firebaseio.com/movies.json",
+      "https://texts-88adb-default-rtdb.firebaseio.com/texts.json",
       {
         method: "POST",
-        body: JSON.stringify(movie),
+        body: JSON.stringify(text),
         headers: {
           "Content-Type": "application/json",
         },
