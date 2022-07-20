@@ -4,6 +4,7 @@ import classes from "./AddText.module.css";
 
 function AddText(props) {
   const [enteredName, setEnteredName] = useState("");
+  const [enteredNameIsValid, setEnteredNameIsValid] = useState(true);
   const titleRef = useRef("");
   const openingTextRef = useRef("");
   const releaseDateRef = useRef("");
@@ -16,6 +17,7 @@ function AddText(props) {
     event.preventDefault();
 
     if (enteredName.trim() === "") {
+      setEnteredNameIsValid(false);
       return;
     }
 
@@ -39,10 +41,16 @@ function AddText(props) {
           ref={titleRef}
           value={enteredName}
         />
+        {!enteredNameIsValid && (
+          <p className={classes.errorText}>Name must not be empty.</p>
+        )}
       </div>
       <div className={classes.control}>
         <label htmlFor="opening-text">Message</label>
         <textarea rows="5" id="opening-text" ref={openingTextRef}></textarea>
+        {!enteredNameIsValid && (
+          <p className={classes.errorText}>Message must not be empty.</p>
+        )}
       </div>
       <button>Send</button>
     </form>
